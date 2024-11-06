@@ -2,6 +2,7 @@ package store.controller;
 
 import store.model.Store;
 import store.service.StoreService;
+import store.view.OutputView;
 
 public class StoreController {
     private Store store;
@@ -17,6 +18,7 @@ public class StoreController {
 
     public void initializeStore(){
         store = service.initStore();
+        OutputView.printCurrentItems(store);
     }
 
 

@@ -10,4 +10,8 @@ public class Store {
         this.items = items;
         this.promotions = promotions;
     }
+
+    public List<Item> getItems(){
+        return items;
+    }
 }

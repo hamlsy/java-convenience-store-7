@@ -13,6 +13,22 @@ public class Item {
         this.promotionName = promotionName;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String getPromotionName() {
+        return promotionName;
+    }
+
     public void buyItem(int amount){
 
     }
