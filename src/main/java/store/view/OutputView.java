@@ -5,12 +5,13 @@ import store.model.Store;
 import store.utils.Utils;
 
 import static store.message.OutputMessage.*;
+import static store.utils.Utils.*;
 
 public class OutputView {
     public static void printCurrentItems(Store store){
-        Utils.print(OUTPUT_CURRENT_ITEMS_INFO.getMessage());
+        print(OUTPUT_CURRENT_ITEMS_INFO.getMessage());
         for(Item item : store.getItems()){
-            Utils.print(OUTPUT_CURRENT_ITEMS.getItemFormatMessage(item));
+            print(OUTPUT_CURRENT_ITEMS.getItemFormatMessage(item));
         }
     }
 }
