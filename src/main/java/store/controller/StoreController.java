@@ -20,11 +20,11 @@ public class StoreController {
     }
 
     public void initializeStore(){
-
+        getStoreProducts();
     }
 
-    public List<Item> getStoreProducts() throws IOException {
-        String filePath = "../resources/products.md";
+    public List<Item> getStoreProducts(){
+        String filePath = "src/main/resources/products.md";
         return service.readItemsFromProductsFile(filePath);
     }
 
