@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import static store.Constants.*;
 public class FileReader {
 
-    public static List<Item> readItemsFromProductsFile(String filePath){
+    public static List<Item> readItemsFromFile(String filePath){
         List<Item> items = new ArrayList<>();
         try{
             items = Files.lines(Paths.get(filePath)).skip(1)
@@ -35,7 +35,7 @@ public class FileReader {
 
     }
 
-    public static List<Promotion> readPromotionsFromPromotionsFile(String filePath){
+    public static List<Promotion> readPromotionsFromFile(String filePath){
         List<Promotion> promotions = new ArrayList<>();
         try{
             promotions = Files.lines(Paths.get(filePath)).skip(1)

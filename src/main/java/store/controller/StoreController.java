@@ -20,12 +20,8 @@ public class StoreController {
     }
 
     public void initializeStore(){
-        getStoreProducts();
+        store = service.createStore();
     }
 
-    public List<Item> getStoreProducts(){
-        String filePath = "src/main/resources/products.md";
-        return service.readItems(filePath);
-    }
 
 }
