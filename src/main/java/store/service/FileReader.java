@@ -1,5 +1,7 @@
-package store.model;
+package store.service;
 
+import store.model.Item;
+import store.model.Promotion;
 import store.utils.Utils;
 
 import java.io.IOException;

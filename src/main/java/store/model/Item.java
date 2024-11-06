@@ -12,4 +12,11 @@ public class Item {
         this.quantity = quantity;
         this.promotionName = promotionName;
     }
+
+    public void buyItem(int amount){
+
+    }
+
+
+
 }

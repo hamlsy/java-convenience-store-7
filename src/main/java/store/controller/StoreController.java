@@ -1,11 +1,7 @@
 package store.controller;
 
-import store.model.Item;
 import store.model.Store;
 import store.service.StoreService;
-
-import java.io.IOException;
-import java.util.List;
 
 public class StoreController {
     private Store store;
@@ -20,7 +16,7 @@ public class StoreController {
     }
 
     public void initializeStore(){
-        store = service.createStore();
+        store = service.initStore();
     }
 
 
