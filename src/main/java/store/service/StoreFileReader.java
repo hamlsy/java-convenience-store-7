@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static store.Constants.*;
-public class FileReader {
+public class StoreFileReader {
 
     public static List<Item> readItemsFromFile(String filePath){
         List<Item> items = new ArrayList<>();

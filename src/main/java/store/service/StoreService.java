@@ -11,8 +11,8 @@ public class StoreService {
     public Store initStore(){
         String itemFilePath = "src/main/resources/products.md";
         String promotionFilePath = "src/main/resources/products.md";
-        List<Item> items = FileReader.readItemsFromFile(itemFilePath);
-        List<Promotion> promotions = FileReader.readPromotionsFromFile(promotionFilePath);
+        List<Item> items = StoreFileReader.readItemsFromFile(itemFilePath);
+        List<Promotion> promotions = StoreFileReader.readPromotionsFromFile(promotionFilePath);
         return new Store(items, promotions);
     }
 
