@@ -25,7 +25,7 @@ public class StoreController {
 
     public List<Item> getStoreProducts(){
         String filePath = "src/main/resources/products.md";
-        return service.readItemsFromProductsFile(filePath);
+        return service.readItems(filePath);
     }
 
 }

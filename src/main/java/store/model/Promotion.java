@@ -4,12 +4,14 @@ import java.time.LocalDateTime;
 
 public class Promotion {
     private String name;
+    private int buy;
     private int get;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private String startDate;
+    private String endDate;
 
-    public Promotion(String name, int get, LocalDateTime startDate, LocalDateTime endDate) {
+    public Promotion(String name, int buy, int get, String startDate, String endDate) {
         this.name = name;
+        this.buy = buy;
         this.get = get;
         this.startDate = startDate;
         this.endDate = endDate;
