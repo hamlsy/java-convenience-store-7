@@ -5,7 +5,7 @@ import store.service.StoreService;
 
 public class Application {
     public static void main(String[] args) {
-        StoreController storeController = new StoreController(new StoreService());
+        StoreController storeController = new StoreController();
         storeController.run();
     }
 }
