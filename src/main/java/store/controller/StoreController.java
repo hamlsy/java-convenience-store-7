@@ -14,6 +14,8 @@ public class StoreController {
 
     public void run(){
         initializeStore();
+        buyStoreProduct();
+        afterBuyProduct();
     }
 
     public void initializeStore(){
@@ -21,5 +23,12 @@ public class StoreController {
         OutputView.printCurrentItems(store);
     }
 
+    public void buyStoreProduct(){
+
+    }
+
+    public void afterBuyProduct(){
+
+    }
 
 }

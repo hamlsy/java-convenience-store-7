@@ -20,7 +20,7 @@ public class Buyer {
     }
 
     public void addPromotionItem(Item item){
-        promotionItems.add(item);   re
+        promotionItems.add(item);
     }
 
 }

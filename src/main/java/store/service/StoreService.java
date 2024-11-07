@@ -6,16 +6,17 @@ import store.model.Store;
 
 import java.util.List;
 
+import static store.Constants.*;
 public class StoreService {
 
     public Store initStore(){
-        String itemFilePath = "src/main/resources/products.md";
-        String promotionFilePath = "src/main/resources/products.md";
-        List<Item> items = StoreFileReader.readItemsFromFile(itemFilePath);
-        List<Promotion> promotions = StoreFileReader.readPromotionsFromFile(promotionFilePath);
+        List<Item> items = StoreFileReader.readItemsFromFile(PRODUCTS_PATH);
+        List<Promotion> promotions = StoreFileReader.readPromotionsFromFile(PROMOTIONS_PATH);
         return new Store(items, promotions);
     }
 
+    public void buyStoreProduct(Store store){
 
+    }
 
 }

@@ -16,8 +16,12 @@ public enum OutputMessage {
     }
 
     public String getItemFormatMessage(Item item){
-        return String.format(message, item.getName(), item.getPrice(),
-                item.getQuantity(), item.getPromotionName());
+        String name = item.getName();
+        int price = item.getPrice();
+        String quantity = item.getQuantityToString();
+        String promotionName = item.getPromotionName();
+        return String.format(message, name, price,
+                quantity, promotionName);
     }
 
 }

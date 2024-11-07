@@ -33,6 +33,11 @@ public class Item {
 
     }
 
-
+    public String getQuantityToString(){
+        if(quantity == 0){
+            return "재고 없음";
+        }
+        return Integer.toString(quantity);
+    }
 
 }
