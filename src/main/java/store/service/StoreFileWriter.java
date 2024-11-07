@@ -8,11 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import static store.message.ErrorMessage.*;
+import static store.Constants.*;
 public class StoreFileWriter {
 
     public static void updateItemFile(List<Item> items, String filePath){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write("name,price,quantity,promotion");
+            writer.write(PRODUCTS_FILE_FIRST_LINE);
             writer.newLine();
 
             for (Item item : items) {
@@ -22,13 +24,13 @@ public class StoreFileWriter {
                 writer.newLine();
             }
         } catch (IOException e) {
-            throw new RuntimeException("파일 저장 중 오류가 발생했습니다.", e);
+            throw new RuntimeException(FILE_UPDATE_ERROR.getMessage());
         }
     }
 
     public static void updatePromotionFile(List<Promotion> promotions, String filePath){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write("name,buy,get,start_date,end_date");
+            writer.write(PROMOTIONS_FILE_FIRST_LINE);
             writer.newLine();
 
             for (Promotion promotion : promotions) {
@@ -37,7 +39,7 @@ public class StoreFileWriter {
                 writer.newLine();
             }
         } catch (IOException e) {
-            throw new RuntimeException("파일 저장 중 오류가 발생했습니다.", e);
+            throw new RuntimeException(FILE_UPDATE_ERROR.getMessage());
         }
     }
 

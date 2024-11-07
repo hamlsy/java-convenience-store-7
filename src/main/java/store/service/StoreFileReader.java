@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static store.Constants.*;
+import static store.message.ErrorMessage.*;
 public class StoreFileReader {
 
     public static List<Item> readItemsFromFile(String filePath){
@@ -31,7 +32,7 @@ public class StoreFileReader {
                     })
                     .collect(Collectors.toList());
         }catch (IOException e){
-            System.out.println(e);
+            throw new RuntimeException(FILE_READ_ERROR.getMessage());
         }
         return items;
 
@@ -55,7 +56,7 @@ public class StoreFileReader {
                     })
                     .collect(Collectors.toList());
         }catch (IOException e){
-            System.out.println(e);
+            throw new RuntimeException(FILE_READ_ERROR.getMessage());
         }
         return promotions;
 
