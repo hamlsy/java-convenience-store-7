@@ -2,8 +2,12 @@ package store.controller;
 
 import store.model.Buyer;
 import store.model.Store;
+import store.service.InputParser;
 import store.service.StoreService;
+import store.view.InputView;
 import store.view.OutputView;
+
+import java.util.HashMap;
 
 public class StoreController {
     private Store store;
@@ -28,7 +32,9 @@ public class StoreController {
     }
 
     public void buyStoreProduct(){
-        //service.buyStoreProduct
+        String inputOrder = InputView.readOrderItem();
+        HashMap<String, Integer> orderMap = InputParser.getOrderMap(inputOrder)
+        service.orderItems(store, buyer, orderMap);
     }
 
     public void afterBuyProduct(){

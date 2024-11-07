@@ -4,13 +4,13 @@ public class Item {
     private String name;
     private int price;
     private int quantity;
-    private String promotionName;
+    private Promotion promotion;
 
-    public Item(String name, int price, int quantity, String promotionName) {
+    public Item(String name, int price, int quantity, Promotion promotion) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.promotionName = promotionName;
+        this.promotion = promotion;
     }
 
     public String getName() {
@@ -26,7 +26,7 @@ public class Item {
     }
 
     public String getPromotionName() {
-        return promotionName;
+        return promotion.getName();
     }
 
     public void buyItem(int amount){
@@ -34,10 +34,13 @@ public class Item {
     }
 
     public String getQuantityToString(){
-        if(quantity == 0){
+        if(hasNotQuantity()){
             return "재고 없음";
         }
         return Integer.toString(quantity);
     }
 
+    private boolean hasNotQuantity(){
+        return quantity == 0;
+    }
 }

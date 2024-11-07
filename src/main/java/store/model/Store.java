@@ -4,14 +4,13 @@ import java.util.List;
 
 public class Store {
     List<Item> items;
-    List<Promotion> promotions;
 
-    public Store(List<Item> items, List<Promotion> promotions) {
+    public Store(List<Item> items) {
         this.items = items;
-        this.promotions = promotions;
     }
 
     public List<Item> getItems(){
         return items;
     }
+
 }

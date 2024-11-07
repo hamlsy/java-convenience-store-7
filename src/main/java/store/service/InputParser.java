@@ -1,6 +1,5 @@
 package store.service;
 
-import store.Constants;
 import store.utils.Utils;
 
 import java.util.HashMap;
@@ -10,27 +9,27 @@ import static store.Constants.*;
 
 public class InputParser {
 
-    public static HashMap<String, Integer> getBuyMap(String input){
-        HashMap<String, Integer> buyMap = new HashMap<>();
+    public static HashMap<String, Integer> getOrderMap(String input){
+        HashMap<String, Integer> orderMap = new HashMap<>();
         List<String> inputBuyItems = List.of(input.split(PARSER_DELIMITER));
         for(String buyItem : inputBuyItems){
-            validateInputBuyItemsFormat(buyItem);
+            validateInputOrderItemsFormat(buyItem);
             String[] parsed = parse(buyItem);
-            buyMap.put(parsed[0], Utils.stringToInteger(parsed[1]));
+            orderMap.put(parsed[0], Utils.stringToInteger(parsed[1]));
         }
-        return buyMap;
+        return orderMap;
     }
 
-    public static void validateInputBuyItemsFormat(String buyItem){
-        if(buyItem.charAt(0) != '[' || buyItem.charAt(buyItem.length()-1) != ']'){
+    public static void validateInputOrderItemsFormat(String orderItem){
+        if(orderItem.charAt(0) != '[' || orderItem.charAt(orderItem.length()-1) != ']'){
             throw new IllegalArgumentException();
         }
-        if(!buyItem.contains("-")) {
+        if(!orderItem.contains("-")) {
             throw new IllegalArgumentException();
         }
     }
 
-    public static String[] parse(String buyItem){
-        return buyItem.substring(1, buyItem.length()-1).split("-");
+    private static String[] parse(String orderItem){
+        return orderItem.substring(1, orderItem.length()-1).split("-");
     }
 }
