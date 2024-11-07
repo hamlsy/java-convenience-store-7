@@ -1,6 +1,7 @@
 package store.controller;
 
 import store.model.Buyer;
+import store.model.Order;
 import store.model.Store;
 import store.service.InputParser;
 import store.service.StoreService;
@@ -33,8 +34,8 @@ public class StoreController {
 
     public void buyStoreProduct(){
         String inputOrder = InputView.readOrderItem();
-        HashMap<String, Integer> orderMap = InputParser.getOrderMap(inputOrder)
-        service.orderItems(store, buyer, orderMap);
+        HashMap<String, Integer> orderMap = InputParser.getOrderMap(inputOrder);
+        service.orderItems(new Order(store, buyer, orderMap));
     }
 
     public void afterBuyProduct(){

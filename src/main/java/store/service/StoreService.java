@@ -1,9 +1,6 @@
 package store.service;
 
-import store.model.Buyer;
-import store.model.Item;
-import store.model.Promotion;
-import store.model.Store;
+import store.model.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +14,7 @@ public class StoreService {
         return new Store(items);
     }
 
-    public void orderItems(Store store, Buyer buyer, HashMap<String, Integer> orderMap){
+    public void orderItems(Order order){
 
     }
 
